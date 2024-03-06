@@ -1,38 +1,14 @@
-# create-svelte
+<div align="center">
+    <article style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <p align="center"><img width="300" src="https://ik.imagekit.io/songlim/logo.png?updatedAt=1707107048802" /></p>
+        <h1 style="width: 100%; text-align: center;">Bookworm Frontend</h1>
+        <p>
+            An frontend application which utilize <a href="https://github.com/songlim327/bookworm-api" style="font-weight: bold">Bookworm API</a>
+        </p>
+    </article>
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+![Svelte][svelte-badge]
 
-## Creating a project
+[svelte-badge]: https://img.shields.io/badge/Svelte-4.2.7-orange
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+</div>
