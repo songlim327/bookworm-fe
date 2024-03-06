@@ -4,7 +4,7 @@
 	import { Toaster } from 'svelte-sonner';
 </script>
 
-<div id="main-layout" class="min-h-screen flex flex-col">
+<div id="main-layout" class="h-screen flex flex-col overflow-hidden">
 	<ModeWatcher />
 	<Toaster />
 	<slot />

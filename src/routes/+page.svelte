@@ -19,7 +19,7 @@
 			// const response = await fetch('/api/test', { method: 'POST' });
 			const response = await fetch('/api/query', {
 				method: 'POST',
-				body: JSON.stringify({message: message})
+				body: JSON.stringify({ message: message })
 			});
 
 			if (response.ok) {
@@ -35,7 +35,8 @@
 						result = '';
 						return;
 					}
-					result += value.substring('data:'.length).trim() + ' ';
+					const v = value.substring('data:'.length).replace('\n\n$', '');
+					result += `${v} `;
 					return reader.read().then(stream);
 				});
 			}
@@ -60,18 +61,13 @@
 	};
 </script>
 
-<!-- TODO -->
-<!-- Add shortcut key for enter -->
-<!-- Onclick event for send query -->
-<!-- TODO dynamic rendering for the chats -->
-
 <!-- Navbar -->
 <header class="top-0 border-b border-border/60 bg-background bg-background/95 backdrop-blur">
 	<div class="container flex h-16 max-w-screen-2xl items-center">
 		<div class="flex">
 			<a class="mr-6 h-12 gap-x-2 md:flex md:items-center" href="/">
 				<Logo class="h-8 w-8" />
-				<Label class="font-bold hover:cursor-pointer">SQL Bookworm</Label>
+				<Label class="font-bold hover:cursor-pointer">Bookworm</Label>
 			</a>
 			<nav class="flex items-center gap-6 text-sm">
 				<a class="text-foreground/60 transition-colors hover:text-foreground/80" href="/">
@@ -104,30 +100,36 @@
 </header>
 
 <!-- Content -->
-<div class="container flex flex-1 p-6">
-	<div id="chatbox" class="flex flex-1 flex-col items-center rounded-xl border">
-		<div class="mx-auto w-full max-w-3xl flex-1 gap-4 p-6">
+<div class="container grow overflow-hidden p-6">
+	<div id="chatbox" class="flex h-full flex-col justify-between overflow-hidden rounded-xl border">
+		<div
+			class="m-4 mx-auto h-32 w-full max-w-4xl grow overflow-y-auto p-2 scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-700 scrollbar-track-rounded-full scrollbar-thumb-rounded-full"
+		>
 			<!-- Chats -->
 			{#each chats as chat, i}
 				{#if i % 2 === 0}
-					<div class="flex w-max max-w-[50%] flex-col gap-2 rounded-lg bg-muted px-3 py-2 text-sm text-pretty">
+					<div
+						class="flex w-max max-w-[50%] flex-col gap-2 text-pretty rounded-lg bg-muted px-3 py-2 text-sm"
+					>
 						{chat}
 					</div>
 				{:else}
 					<div
-						class="ml-auto flex w-max max-w-[50%] flex-col gap-2 rounded-lg bg-primary px-3 py-2 text-sm text-primary-foreground text-pretty"
+						class="ml-auto flex w-max max-w-[50%] flex-col gap-2 text-pretty rounded-lg bg-primary px-3 py-2 text-sm text-primary-foreground"
 					>
 						{chat}
 					</div>
 				{/if}
 			{/each}
 			{#if result !== ''}
-				<div class="flex w-max max-w-[50%] flex-col gap-2 rounded-lg bg-muted px-3 py-2 text-sm text-pretty">
+				<div
+					class="flex w-max max-w-[50%] flex-col gap-2 text-pretty rounded-lg bg-muted px-3 py-2 text-sm"
+				>
 					{result}
 				</div>
 			{/if}
 		</div>
-		<div class="mb-6 flex w-full flex-col">
+		<div class="top-auto mb-6 flex w-full flex-col">
 			<form
 				method="POST"
 				class="align-center mb-2 mt-auto flex justify-center gap-2"
@@ -167,7 +169,7 @@
 
 <!-- Footer -->
 <div class="container sticky bottom-0 h-12 text-sm leading-[3rem] text-muted-foreground">
-	Built & designed with 💙 by <a class="font-bold underline" href="mailto:songlim@sql.com.my"
+	Built & designed with 💙 by <a class="font-bold underline" href="mailto:songlim327@gmail.com.my"
 		>Song Lim</a
 	>
 </div>

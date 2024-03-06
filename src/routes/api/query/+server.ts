@@ -1,4 +1,4 @@
-export async function POST({ fetch, request, cookies }) {
+export async function POST({ fetch, request }) {
 	const message = await request.json();
 
 	return fetch('http://192.168.0.152:8000/query', {

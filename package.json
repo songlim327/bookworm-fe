@@ -42,6 +42,7 @@
 		"mode-watcher": "^0.1.2",
 		"svelte-sonner": "^0.3.12",
 		"tailwind-merge": "^2.2.0",
+		"tailwind-scrollbar": "^3.1.0",
 		"tailwind-variants": "^0.1.20"
 	}
 }
