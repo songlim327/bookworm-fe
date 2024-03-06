@@ -1,7 +1,9 @@
+import { API_HOST } from '$env/static/private'
+
 export async function POST({ fetch, request }) {
 	const message = await request.json();
 
-	return fetch('http://192.168.0.152:8000/query', {
+	return fetch(`${API_HOST}/query`, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
